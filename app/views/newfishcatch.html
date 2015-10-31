@@ -1,0 +1,41 @@
+
+  <div  class="container">
+    <div class="alert alert-success" ng-hide="catchEntered">
+      <p class="alert-success">Entered lake successfully</p>
+    </div>
+    <p class="help-text"> <a href="/viewcatches">View catches </a></p>
+    <form >
+      <div class="form-group">
+        <label for="lake">Lake Name</label>
+         <select class="form-control" ng-model="lake">
+          <option ng-repeat="l in lakes">{{l.name}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+
+        <label for="temperature">Temperature</label>
+        <input ng-model="temperature" type="text" class="form-control" id="temperature" placeholder="Temperature">
+      </div>
+
+      <div class="form-group">
+
+        <label for="latitude">Latitude</label>
+        <input ng-model="latitude" type="text" class="form-control" id="latitude" placeholder="Latitude">
+      </div>
+
+      <div class="form-group">
+
+        <label for="longitude">Longitude</label>
+        <input ng-model="longitude" type="text" class="form-control" id="longitude" placeholder="Longitude">
+      </div>
+      
+      <div class="form-group">
+        <label for="longitude">Catch Details</label>
+          <textarea ng-model="details" type="text" class="form-control" id="details" placeholder="Enter details about catch here">
+          </textarea>
+      </div>
+
+      <button ng-click="newFishCatch()" type="submit" class="btn btn-lg btn-primary">Submit</button>
+    </form>
+
+  </div>

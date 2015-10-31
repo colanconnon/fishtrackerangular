@@ -1,0 +1,26 @@
+<div class="container">
+
+  <div class="alert alert-success" ng-hide="hidden">You are now registered.
+  <p class="help-text"> <a href="/login">You can now login. </a></p></div>
+  <div class="alert alert-danger" ng-hide="failedLogin">This user already exists.</div>
+    <div class="alert alert-danger" ng-hide="failedPasswordMatch">Passwords don't match.</div>
+  <p class="help-text"> <a href="/login">Already have an account? Login. </a></p>
+  <form >
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input ng-model="username" type="text" class="form-control" id="username" placeholder="username">
+    </div>
+    <div class="form-group">
+
+      <label for="Password">Password</label>
+      <input ng-model="password" type="password" class="form-control" id="Password" placeholder="Password">
+    </div>
+    <div class="form-group">
+
+      <label for="confirmPassword">Confirm Password</label>
+      <input ng-model="confirmPassword" type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+    </div>
+    <button ng-click="registerClick()" type="submit" class="btn btn-lg btn-primary">Submit</button>
+  </form>
+
+</div>

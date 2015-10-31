@@ -1,0 +1,64 @@
+
+
+a {
+  color: #00B7FF;
+}
+body {
+  height: 100%;
+  padding-top: 70px;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+/* Sticky footer styles
+-------------------------------------------------- */
+
+.footer {
+  right:0;
+  left:0;
+  position: absolute;
+  bottom: 0;
+
+  /* Set the fixed height of the footer here */
+  height: 100px;
+  background-color: #dd4814;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+#content{
+  padding-bottom:100px;
+  position:relative;   /* Height of the footer element */
+}
+
+.container .text-muted {
+  margin: 20px 0;
+  color:#ffffff;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.jumbotron{
+  padding: 10px;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
