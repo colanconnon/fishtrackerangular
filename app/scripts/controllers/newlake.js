@@ -8,43 +8,24 @@
  * Controller of the fishtrackerangularApp
  */
 angular.module('fishtrackerangularApp')
-  .controller('NewlakeCtrl', function () {
-   $scope.catchEntered = true;
-    var req1 = {
-      method: 'GET',
-      url: '/lake/',
-      headers: {
-        'Content-Type': "Application/json",
-        'Authorization': "Bearer: " + localStorage.getItem('Token')
-      }
-    };
-    $http(req1).then(function(data){
-      $scope.lakes = data.data.lakes;
-      console.log(JSON.stringify($scope.lakes));
-    });
-    
-    $scope.newFishCatch = function(){
+  .controller('NewlakeCtrl', function ($scope, $http) {
+   $scope.enteredLake = true;
+    $scope.newLake = function(){
       var req = {
-        method: 'POST',
-        url: '/fishcatch/',
-        headers:{
+        method: "POST",
+        url: '/api/lake/',
+        headers: {
           'Content-Type': "Application/json",
           'Authorization': "Bearer: " + localStorage.getItem('Token')
         },
         data: {
-          temperature: $scope.temperature,
-          longitude: $scope.longitude,
-          latitude: $scope.latitude,
-          lake: $scope.lake,
-          details: $scope.details
+          'name': $scope.lake
         }
       };
       $http(req).then(function(data){
-        $scope.catchEntered = false;
-        $scope.temperature = '';
-        $scope.longitude = '';
-        $scope.latitude = '';
+        $scope.enteredLake = false;
         $scope.lake = '';
+        console.log(data);
       });
     };
   });

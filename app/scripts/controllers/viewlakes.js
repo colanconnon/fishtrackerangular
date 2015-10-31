@@ -14,7 +14,7 @@ angular.module('fishtrackerangularApp')
     };
     var req = {
       method: 'GET',
-      url: '/lake/',
+      url: '/api/lake/',
       headers: {
         'Content-Type': "Application/json",
         'Authorization': "Bearer: " + localStorage.getItem('Token')

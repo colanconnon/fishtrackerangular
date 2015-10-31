@@ -18,7 +18,7 @@ angular.module('fishtrackerangularApp')
     $scope.loginClick = function() {
       var req = {
         method: 'POST',
-        url: '/users/Token',
+        url: '/api/users/Token',
         headers: {
           'Content-Type': 'Application/json'
         },
