@@ -25,10 +25,10 @@ angular.module('fishtrackerangularApp')
       $http(req).then(function(data){
         $scope.fishCatches = data.data.fishCatches;
         console.log(JSON.stringify($scope.fishCatches));
-      
-        
+
+
       });
-    
+
       $scope.confirmDelete = function(){
         console.log(JSON.stringify($scope.fishCatchToDelete));
         var req = {
@@ -52,9 +52,9 @@ angular.module('fishtrackerangularApp')
             $scope.indexToDelete = null;
             $scope.fishCatchDeletedDiv = false;
           }
-        
+
         });
-        
+
       };
       $scope.setDelete = function(index){
         $scope.fishCatchToDelete = $scope.fishCatches[index];

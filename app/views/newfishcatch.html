@@ -1,10 +1,18 @@
+<script>
+ 
 
+
+
+ </script>
   <div  class="container">
     <div class="alert alert-success" ng-hide="catchEntered">
       <p class="alert-success">Entered lake successfully</p>
     </div>
-    <p class="help-text"> <a href="/viewcatches">View catches </a></p>
-    <form >
+    <p class="help-text"> <a href="/#/viewcatches">View catches </a></p>
+    <div id="mapcanvas" style="width: 800px; height: 500px;">
+      
+    </div>
+    <form>
       <div class="form-group">
         <label for="lake">Lake Name</label>
          <select class="form-control" ng-model="lake">

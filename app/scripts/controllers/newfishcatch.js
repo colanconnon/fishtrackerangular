@@ -9,6 +9,24 @@
  */
 angular.module('fishtrackerangularApp')
   .controller('NewfishcatchCtrl', function ($scope, $http) {
+    var map;
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('mapcanvas'), {
+        center: {lat: 38.06539235133249, lng: -92.63671875},
+        zoom: 3
+      });
+    }
+    initMap();
+    map.addListener('click', function(event) {
+      alert( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() );
+      document.getElementById('latitude').value = event.latLng.lat();
+      document.getElementById('longitude').value = event.latLng.lng();
+      $scope.$apply(function(){
+        $scope.latitude =  event.latLng.lat();
+        $scope.longitude = event.latLng.lng();
+      });
+    });
+
      $scope.catchEntered = true;
     var req1 = {
       method: 'GET',
@@ -22,7 +40,7 @@ angular.module('fishtrackerangularApp')
       $scope.lakes = data.data.lakes;
       console.log(JSON.stringify($scope.lakes));
     });
-    
+
     $scope.newFishCatch = function(){
       var req = {
         method: 'POST',
@@ -45,6 +63,7 @@ angular.module('fishtrackerangularApp')
         $scope.longitude = '';
         $scope.latitude = '';
         $scope.lake = '';
+        $scope.details = '';
       });
     };
   });

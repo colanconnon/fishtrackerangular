@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
   <head>
+
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
@@ -14,6 +15,9 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+     <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVJy4mjex7GmYufoTVxV_xZ3y3fo3BWQk">
+    </script>
   </head>
   <body ng-app="fishtrackerangularApp">
     <!--[if lte IE 8]>
@@ -33,16 +37,16 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/#/">Project name</a>
+        <a class="navbar-brand" href="/#/">FishTracker</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
 
-          <li><a href="/about">About</a></li>
-          <li><a href="/login">Login</a></li>
-          <li><a href="/register">Register</a></li>
-          <li><a href="/logout"> Logout </a></li>
-          <li><a href="/viewcatches"> View Catches </a></li>
+          <li><a href="/#/about">About</a></li>
+          <li><a href="/#/login">Login</a></li>
+          <li><a href="/#/register">Register</a></li>
+          <li><a href="/#/logout"> Logout </a></li>
+          <li><a href="/#/viewcatches"> View Catches </a></li>
         </ul>
       </div>
       <!--/.nav-collapse -->
@@ -100,6 +104,7 @@
         <script src="scripts/controllers/notauthorized.js"></script>
         <script src="scripts/controllers/newfishcatch.js"></script>
         <script src="scripts/controllers/viewlakes.js"></script>
+        <script src="scripts/controllers/catchdetails.js"></script>
         <!-- endbuild -->
 </body>
 </html>

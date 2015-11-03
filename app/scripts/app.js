@@ -70,11 +70,13 @@ angular
         controller: 'ViewlakesCtrl',
         controllerAs: 'viewlakes'
       })
+      .when('/catchdetails', {
+        templateUrl: 'views/catchdetails.html',
+        controller: 'CatchdetailsCtrl',
+        controllerAs: 'catchdetails'
+      })
       .otherwise({
         redirectTo: '/'
       });
-      $locationProvider.html5Mode({
-        enabled: true,
-        requireBase: false
-      });
+     
   });
