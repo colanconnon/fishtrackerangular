@@ -8,56 +8,56 @@
  * Controller of the fishtrackerangularApp
  */
 angular.module('fishtrackerangularApp')
-  .controller('viewcatchesCtrl', function ($scope,$http, $location) {
+  .controller('viewcatchesCtrl', function($scope, $http, $location) {
 
-      $scope.fishCatchDeletedDiv = true;
-      if(!localStorage.getItem("Token")){
-          $location.path('/notauthorized');
+    $scope.fishCatchDeletedDiv = true;
+    if (!localStorage.getItem("Token")) {
+      $location.path('/notauthorized');
+    }
+    var req = {
+      method: 'GET',
+      url: 'http://localhost:3001/api/fishcatch/',
+      headers: {
+        'Content-Type': "Application/json",
+        'Authorization': "Bearer: " + localStorage.getItem('Token')
       }
+    };
+    $http(req).then(function(data) {
+      $scope.fishCatches = data.data.fishCatches;
+      console.log(JSON.stringify($scope.fishCatches));
+
+
+    });
+
+    $scope.confirmDelete = function() {
+      console.log(JSON.stringify($scope.fishCatchToDelete));
       var req = {
-        method: 'GET',
-        url: '/api/fishcatch/',
+        method: "DELETE",
+        url: "http://localhost:3001/api/fishcatch/",
         headers: {
           'Content-Type': "Application/json",
           'Authorization': "Bearer: " + localStorage.getItem('Token')
+        },
+        data: {
+          id: $scope.fishCatchToDelete._id
         }
       };
-      $http(req).then(function(data){
-        $scope.fishCatches = data.data.fishCatches;
-        console.log(JSON.stringify($scope.fishCatches));
-
+      $http(req).then(function(data) {
+        if (data.data.error) {
+          alert('You don\'t have permission to do that!!');
+        } else if (data.data.success === true) {
+          $scope.fishCatches.splice($scope.indexToDelete, 1);
+          $scope.fishCatchToDelete = null;
+          $scope.indexToDelete = null;
+          $scope.fishCatchDeletedDiv = false;
+        }
 
       });
 
-      $scope.confirmDelete = function(){
-        console.log(JSON.stringify($scope.fishCatchToDelete));
-        var req = {
-          method: "DELETE",
-          url: "/api/fishcatch/",
-          headers: {
-            'Content-Type': "Application/json",
-            'Authorization': "Bearer: "+ localStorage.getItem('Token')
-          },
-          data: {
-            id: $scope.fishCatchToDelete["_id"]
-          }
-        };
-        $http(req).then(function(data){
-          if(data.data.error){
-            alert("You don't have permission to do that!!");
-          }
-          else if(data.data.success === true){
-            $scope.fishCatches.splice($scope.indexToDelete, 1);
-            $scope.fishCatchToDelete = null;
-            $scope.indexToDelete = null;
-            $scope.fishCatchDeletedDiv = false;
-          }
+    };
+    $scope.setDelete = function(index) {
+      $scope.fishCatchToDelete = $scope.fishCatches[index];
+      $scope.indexToDelete = index;
+    };
 
-        });
-
-      };
-      $scope.setDelete = function(index){
-        $scope.fishCatchToDelete = $scope.fishCatches[index];
-        $scope.indexToDelete = index;
-      };
   });

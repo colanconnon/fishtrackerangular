@@ -1,15 +1,69 @@
+<div class="container">
 
-<div class="container"> <a href="/#/newlake" class="btn btn-lg btn-primary"> Add a new lake </a>
-	<br />
-	<br />
-	<div>
-	<div ng-repeat="lake in lakes" class="well">
-		<h3>Lake: {{lake.name}}</h3>
-		<a href="#" class="btn btn-primary">View Catches </a>
-		<br />
-		<br />
-		<a href="#" class="btn btn-primary"> Delete </a>
-	</div>
-	</div>
-	</div>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Add new Lake
+  </button>
+  <br />
+  <br />
+  <div class="alert alert-danger" ng-hide="lakeDeletedDiv">
+    <p class="alert"> You have deleted a lake</p>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">Add new Lake</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="lake">Lake Name</label>
+              <input ng-model="lake" type="text" class="form-control" id="lake" placeholder="Lake Name">
+            </div>
+
+            <button data-dismiss="modal" ng-click="newLake()" type="submit" class="btn btn-lg btn-primary">Submit</button>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <br />
+  <br />
+  <div>
+    <div ng-repeat="lake in lakes" class="well">
+      <h3>Lake: {{lake.name}}</h3>
+      <a href="#" class="btn btn-primary">View Catches </a>
+      <br />
+      <br />
+      <button type="button" ng-click="setDelete($index)" class="btn btn-primary" data-toggle="modal" data-target="#lakeDeleteModal">
+        Delete
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="lakeDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Are you sure want to delete this fish catch?</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" ng-click="confirmDelete()" data-dismiss="modal" class="btn btn-danger">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
 </div>

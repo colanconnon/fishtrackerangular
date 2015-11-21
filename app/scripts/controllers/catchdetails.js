@@ -12,7 +12,7 @@ angular.module('fishtrackerangularApp')
     $scope.fishCatchId = $routeParams.fishCatchId;
 
     var req = {
-      url : "/api/fishcatch/catchdetail/" + $scope.fishCatchId,
+      url : "http://localhost:3001/api/fishcatch/catchdetail/" + $scope.fishCatchId,
       method: "GET",
       headers: {
         'Content-Type': "Application/json",
@@ -22,11 +22,11 @@ angular.module('fishtrackerangularApp')
 
     $http(req).then(function(response){
       console.log(response.data);
-       var map;
+      var map;
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('mapcanvas'), {
-          center: {lat: response.data.fishcatch.latitude, lng: response.data.fishcatch.longitude},
+          center: { lat: response.data.fishcatch.latitude, lng: response.data.fishcatch.longitude },
           zoom: 15
         });
         new google.maps.Marker({

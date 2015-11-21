@@ -8,6 +8,14 @@
  * Controller of the fishtrackerangularApp
  */
 angular.module('fishtrackerangularApp')
-  .controller('LogoutCtrl', function () {
-     localStorage.clear();
+  .controller('LogoutCtrl', function() {
+    if (localStorage.getItem('Token') !== null) {
+      localStorage.clear();
+      location.reload();
+    } else {
+
+    }
+
+
+
   });

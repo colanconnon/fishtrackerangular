@@ -8,7 +8,7 @@
  * Controller of the fishtrackerangularApp
  */
 angular.module('fishtrackerangularApp')
-  .controller('NewfishcatchCtrl', function ($scope, $http) {
+  .controller('NewfishcatchCtrl', function ($scope, $http, $window) {
     var map;
     function initMap() {
       map = new google.maps.Map(document.getElementById('mapcanvas'), {
@@ -30,7 +30,7 @@ angular.module('fishtrackerangularApp')
      $scope.catchEntered = true;
     var req1 = {
       method: 'GET',
-      url: '/api/lake/',
+      url: 'http://localhost:3001/api/lake/',
       headers: {
         'Content-Type': "Application/json",
         'Authorization': "Bearer: " + localStorage.getItem('Token')
@@ -44,7 +44,7 @@ angular.module('fishtrackerangularApp')
     $scope.newFishCatch = function(){
       var req = {
         method: 'POST',
-        url: '/api/fishcatch/',
+        url: 'http://localhost:3001/api/fishcatch/',
         headers:{
           'Content-Type': "Application/json",
           'Authorization': "Bearer: " + localStorage.getItem('Token')
@@ -64,6 +64,7 @@ angular.module('fishtrackerangularApp')
         $scope.latitude = '';
         $scope.lake = '';
         $scope.details = '';
+        $window.scrollTo(0,0);
       });
     };
   });

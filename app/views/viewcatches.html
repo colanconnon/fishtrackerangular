@@ -1,5 +1,5 @@
- <div  class="container ng-cloak"> <a href="/#/newfishcatch" class="btn btn-lg btn-primary"> Add a new catch </a>
-      <a href="/#/viewlakes" class="btn btn-lg btn-primary">View your lakes</a>
+ <div  class="container ng-cloak"> <a href="/#/newfishcatch" class="btn btn-primary"> Add a new catch </a>
+      <a href="/#/viewlakes" class="btn btn-primary">View your lakes</a>
       <br />
       <br />
       <div >
@@ -27,9 +27,9 @@
           <p> longitude: {{fishCatch.longitude}} </p>
           <p> latitude: {{fishCatch.latitude}} </p>
           <p> temperature: {{fishCatch.temperature}} </p>
-        
-          <p> <a href="/#/catchdetails?fishCatchId={{fishCatch._id}}" class="btn btn-primary btn-lg"> View Details </a> </p>
-          <p><button type="button" ng-click="setDelete($index)" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+
+          <p> <a href="/#/catchdetails?fishCatchId={{fishCatch._id}}" class="btn btn-primary"> View Details </a> </p>
+          <p><button type="button" ng-click="setDelete($index)" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
             Delete
 </button> </p>
         </div>

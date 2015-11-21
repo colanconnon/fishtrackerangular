@@ -9,7 +9,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/bootswatch-dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -39,13 +39,14 @@
         </button>
         <a class="navbar-brand" href="/#/">FishTracker</a>
       </div>
-      <div id="navbar" class="navbar-collapse collapse">
+      <div ng-controller="navCtrl" id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
 
           <li><a href="/#/about">About</a></li>
-          <li><a href="/#/login">Login</a></li>
-          <li><a href="/#/register">Register</a></li>
-          <li><a href="/#/logout"> Logout </a></li>
+
+          <li ng-if="!loggedIn"><a href="/#/login">Login</a></li>
+          <li ng-if="!loggedIn"><a href="/#/register">Register</a></li>
+          <li ng-if="loggedIn"><a href="/#/logout"> Logout </a></li>
           <li><a href="/#/viewcatches"> View Catches </a></li>
         </ul>
       </div>
@@ -81,7 +82,7 @@
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/bootswatch-dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-messages/angular-messages.js"></script>
@@ -105,6 +106,7 @@
         <script src="scripts/controllers/newfishcatch.js"></script>
         <script src="scripts/controllers/viewlakes.js"></script>
         <script src="scripts/controllers/catchdetails.js"></script>
+        <script src="scripts/controllers/nav.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -13,7 +13,7 @@ angular.module('fishtrackerangularApp')
     $scope.newLake = function(){
       var req = {
         method: "POST",
-        url: '/api/lake/',
+        url: 'http://localhost:3001/api/lake/',
         headers: {
           'Content-Type': "Application/json",
           'Authorization': "Bearer: " + localStorage.getItem('Token')

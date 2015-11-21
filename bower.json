@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "dependencies": {
     "angular": "^1.4.0",
-    "bootstrap": "^3.2.0",
+    "bootswatch-dist": "darkly",
     "angular-animate": "^1.4.0",
     "angular-cookies": "^1.4.0",
     "angular-messages": "^1.4.0",
@@ -16,14 +16,6 @@
     "angular-mocks": "^1.4.0"
   },
   "appPath": "app",
-  "moduleName": "fishtrackerangularApp",
-  "overrides": {
-    "bootstrap": {
-      "main": [
-        "less/bootstrap.less",
-        "dist/css/bootstrap.css",
-        "dist/js/bootstrap.js"
-      ]
-    }
-  }
+  "moduleName": "fishtrackerangularApp"
+
 }

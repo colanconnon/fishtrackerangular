@@ -1,7 +1,6 @@
 
 
 a {
-  color: #00B7FF;
 }
 body {
   height: 100%;
@@ -19,10 +18,9 @@ html {
   left:0;
   position: absolute;
   bottom: 0;
-
+  background-color: #375a7f;
   /* Set the fixed height of the footer here */
   height: 100px;
-  background-color: #dd4814;
 }
 
 
