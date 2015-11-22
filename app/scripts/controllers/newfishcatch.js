@@ -30,7 +30,7 @@ angular.module('fishtrackerangularApp')
      $scope.catchEntered = true;
     var req1 = {
       method: 'GET',
-      url: 'http://localhost:3001/api/lake/',
+      url: '/api/lake/',
       headers: {
         'Content-Type': "Application/json",
         'Authorization': "Bearer: " + localStorage.getItem('Token')
@@ -44,7 +44,7 @@ angular.module('fishtrackerangularApp')
     $scope.newFishCatch = function(){
       var req = {
         method: 'POST',
-        url: 'http://localhost:3001/api/fishcatch/',
+        url: '/api/fishcatch/',
         headers:{
           'Content-Type': "Application/json",
           'Authorization': "Bearer: " + localStorage.getItem('Token')

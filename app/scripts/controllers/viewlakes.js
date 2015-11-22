@@ -15,7 +15,7 @@ angular.module('fishtrackerangularApp')
     };
     var req = {
       method: 'GET',
-      url: 'http://localhost:3001/api/lake/',
+      url: '/api/lake/',
       headers: {
         'Content-Type': "Application/json",
         'Authorization': "Bearer: " + localStorage.getItem('Token')
@@ -28,7 +28,7 @@ angular.module('fishtrackerangularApp')
     $scope.newLake = function() {
       var req = {
         method: "POST",
-        url: 'http://localhost:3001/api/lake/',
+        url: '/api/lake/',
         headers: {
           'Content-Type': "Application/json",
           'Authorization': "Bearer: " + localStorage.getItem('Token')
@@ -49,7 +49,7 @@ angular.module('fishtrackerangularApp')
     $scope.confirmDelete = function() {
       var req = {
         method: "DELETE",
-        url: "http://localhost:3001/api/lake/",
+        url: "/api/lake/",
         headers: {
           'Content-Type': "Application/json",
           'Authorization': "Bearer: " + localStorage.getItem('Token')
