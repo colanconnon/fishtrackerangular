@@ -44,7 +44,7 @@ angular.module('fishtrackerangularApp')
     $scope.newFishCatch = function(){
       var req = {
         method: 'POST',
-        url: '/api/fishcatch/',
+        url: 'http://localhost:3001/api/fishcatch/',
         headers:{
           'Content-Type': "Application/json",
           'Authorization': "Bearer: " + localStorage.getItem('Token')

@@ -16,7 +16,7 @@ angular.module('fishtrackerangularApp')
     if ($scope.confirmPassword === $scope.password) {
       var req = {
         method: 'POST',
-        url: '/api/users/register',
+        url: 'http://localhost:3001/api/users/register',
         headers: {
           'Content-Type': "Application/json"
         },

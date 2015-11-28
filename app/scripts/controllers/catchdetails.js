@@ -12,7 +12,7 @@ angular.module('fishtrackerangularApp')
     $scope.fishCatchId = $routeParams.fishCatchId;
 
     var req = {
-      url : "/api/fishcatch/catchdetail/" + $scope.fishCatchId,
+      url : "http://localhost:3001/api/fishcatch/catchdetail/" + $scope.fishCatchId,
       method: "GET",
       headers: {
         'Content-Type': "Application/json",

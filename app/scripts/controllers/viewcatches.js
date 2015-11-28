@@ -16,7 +16,7 @@ angular.module('fishtrackerangularApp')
     }
     var req = {
       method: 'GET',
-      url: '/api/fishcatch/',
+      url: 'http://localhost:3001/api/fishcatch/',
       headers: {
         'Content-Type': "Application/json",
         'Authorization': "Bearer: " + localStorage.getItem('Token')
@@ -33,7 +33,7 @@ angular.module('fishtrackerangularApp')
       console.log(JSON.stringify($scope.fishCatchToDelete));
       var req = {
         method: "DELETE",
-        url: "/api/fishcatch/",
+        url: "http://localhost:3001/api/fishcatch/",
         headers: {
           'Content-Type': "Application/json",
           'Authorization': "Bearer: " + localStorage.getItem('Token')
